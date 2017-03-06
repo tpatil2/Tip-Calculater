@@ -13,5 +13,4 @@ Completed:
 * [x] Additional: Created launch screen with welcome message
 * [x] Additional: Making sure the keyboard will disappear after single touch anywhere except bill amount filed
 
-
-<a href=“https://www.dropbox.com/s/58nfklhjim4pid6/Tip%20Cal.mov?dl=0” ></a>
+<a href="https://imgflip.com/gif/1kufsz"><img src="https://i.imgflip.com/1kufsz.gif" title="made at imgflip.com"/></a>
