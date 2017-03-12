@@ -10,4 +10,9 @@ import Foundation
 
 let default_tip_percent = "default_tip_percent"
 let default_split = "default_split"
+let Prev_Bill = "Prev_Bill"
+let Prev_update = "Prev_update"
+
+
+
 

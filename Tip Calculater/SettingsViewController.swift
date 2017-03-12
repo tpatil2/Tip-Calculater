@@ -57,8 +57,8 @@ class SettingsViewController: UIViewController {
         
         let value2 = defaultSplit.text
         defaults.set(value2, forKey: "default_split")
-        
         defaults.synchronize()
+        _ = navigationController?.popViewController(animated: true)
     }
 
     

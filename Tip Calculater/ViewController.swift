@@ -54,6 +54,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.inputBill.becomeFirstResponder()
+        inputBill.keyboardType = .numberPad
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -70,6 +73,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             temptip = defaults.double(forKey: default_tip_percent)
             tempsplit = defaults.double(forKey: default_split)
             flag = false
+        
+            if NSDate().timeIntervalSince1970 < defaults.double(forKey:Prev_update) + 10*60  {
+            inputBill.text = String(defaults.double(forKey: Prev_Bill))
+            }
             self.CalTip(self)
             
     }
@@ -95,6 +102,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         tipLable.text = String(format: "%.2f",tip)
         totalLable.text = String(format: "%.2f",total)
         splitBill.text = String(format: "%.2f",splitbill)
+        
+        let date: Double = NSDate().timeIntervalSince1970
+        let defaults = UserDefaults.standard
+        defaults.set(date, forKey: Prev_update)
+        defaults.set(bill, forKey: Prev_Bill)
+        defaults.synchronize()
+
         
         flag=true
 
