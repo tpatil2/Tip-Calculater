@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var defaultTip: UITextField!
@@ -35,5 +36,30 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        
+        let percentIndex = defaults.string(forKey: "default_tip_percent")
+        defaultTip.text = percentIndex
 
+        let splitIndex = defaults.string(forKey: "default_split")
+        defaultSplit.text = splitIndex
+        
+    }
+    
+    @IBAction func SetDefaut(_ sender: Any) {
+        
+        let defaults = UserDefaults.standard
+        let value1 = defaultTip.text
+        defaults.set(value1, forKey: "default_tip_percent")
+        
+        let value2 = defaultSplit.text
+        defaults.set(value2, forKey: "default_split")
+        
+        defaults.synchronize()
+    }
+
+    
 }

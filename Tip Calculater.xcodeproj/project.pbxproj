@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96AC417C1E753CE00053C1DF /* defaultVal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC417B1E753CE00053C1DF /* defaultVal.swift */; };
 		96D331DC1E6C020C00A5DAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D331DB1E6C020C00A5DAFB /* AppDelegate.swift */; };
 		96D331DE1E6C020C00A5DAFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D331DD1E6C020C00A5DAFB /* ViewController.swift */; };
 		96D331E11E6C020C00A5DAFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D331DF1E6C020C00A5DAFB /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96AC417B1E753CE00053C1DF /* defaultVal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defaultVal.swift; sourceTree = "<group>"; };
 		96D331D81E6C020C00A5DAFB /* Tip Calculater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tip Calculater.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D331DB1E6C020C00A5DAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D331DD1E6C020C00A5DAFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				96D331E21E6C020C00A5DAFB /* Assets.xcassets */,
 				96D331E41E6C020C00A5DAFB /* LaunchScreen.storyboard */,
 				96D331E71E6C020C00A5DAFB /* Info.plist */,
+				96AC417B1E753CE00053C1DF /* defaultVal.swift */,
 			);
 			path = "Tip Calculater";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				96D331DE1E6C020C00A5DAFB /* ViewController.swift in Sources */,
 				96D331DC1E6C020C00A5DAFB /* AppDelegate.swift in Sources */,
 				96D3320F1E6CDBE300A5DAFB /* SettingsViewController.swift in Sources */,
+				96AC417C1E753CE00053C1DF /* defaultVal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

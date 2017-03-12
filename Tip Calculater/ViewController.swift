@@ -19,8 +19,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var splitBill: UILabel!
     
     var temptip:Double = 0.0
+    var tempsplit:Double = 0.0
+    var flag:Bool = true
+
     
     let tipPercent = ["10", "15", "18", "20", "22", "23", "25"]
+    let numSplit = [2, 3, 4, 5, 6]
+
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -41,6 +46,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     {
         tipLable.text = tipPercent[row]
         temptip = Double(tipLable.text!) ?? 0
+        self.CalTip(self)
+        
     }
     
 
@@ -54,26 +61,42 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+   
+    override func viewWillAppear(_ animated: Bool) {
+        
+            let defaults = UserDefaults.standard
+        
+            temptip = defaults.double(forKey: default_tip_percent)
+            tempsplit = defaults.double(forKey: default_split)
+            flag = false
+            self.CalTip(self)
+            
+    }
+    
+   
     @IBAction func OnTap(_ sender: Any) {
         view.endEditing(true)
     }
+    
     @IBAction func CalTip(_ sender: AnyObject) {
         
-        let numSplit = [2, 3, 4, 5, 6]
     
         let bill = Double(inputBill.text!) ?? 0
-        print(temptip)
 
         let tip = bill * temptip * 0.01
         let total = bill+tip
-        let splitbill = total / Double(numSplit[tipBar.selectedSegmentIndex])
-
         
+        if flag==true {
+            tempsplit = Double(numSplit[tipBar.selectedSegmentIndex])
+        }
+        
+        let splitbill = total / tempsplit
         tipLable.text = String(format: "%.2f",tip)
         totalLable.text = String(format: "%.2f",total)
         splitBill.text = String(format: "%.2f",splitbill)
-
+        
+        flag=true
 
         
     }
